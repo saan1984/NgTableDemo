@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-table demo</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/ng-table/dist/ng-table.min.css">
+</head>
+<body ng-controller="MainCtrl" class="container">
+    <table ng-table="tableParams"  class="table table-bordered" >
+        <thead>
+            <tr>
+                <th rowspan="2">ID</th>
+                <th colspan="2">primary</th>
+                <th colspan="2">secondary</th>
+            </tr>
+            <tr>
+                <th>NAME</th>
+                <th>AGE</th>
+                <th>NAME</th>
+                <th>AGE</th>
+            </tr>
+        <thead>
+        <tbody>
+            <tr ng-repeat="person in $data">
+                <td data-title="'id'" >
+                    {{person.id}}
+                </td>
+                <td data-title="'Name'">
+                    {{person.primary.name}}
+                </td>
+                <td data-title="'Age'">
+                    {{person.primary.age}}
+                </td>
+                <td data-title="'Name'">
+                    {{person.secondary.name}}
+                </td>
+                <td data-title="'Age'">
+                    {{person.secondary.age}}
+                </td>
+            </tr>
+        </tbody>
+        </tbody>
+    </table>
+</body>
+<script src="node_modules/angular/angular.min.js"></script>
+<script src="node_modules/ng-table/dist/ng-table.min.js"></script>
+<script src="app.js"></script>
+</html>
